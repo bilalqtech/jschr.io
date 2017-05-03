@@ -3,6 +3,7 @@ import * as ellipsize from 'ellipsize'
 import * as github from './sources/github'
 import * as twitter from './sources/twitter'
 import * as medium from './sources/medium'
+import * as behance from './sources/behance'
 
 import { AppProps } from './components/App'
 
@@ -30,6 +31,7 @@ export default async function getProps(): Promise<AppProps> {
     github.getActivity(githubUsername),
     twitter.getTimeline(twitterUsername),
     medium.getStories(mediumUsername),
+    behance.getUserProject('katamoravszki')
   ])
 
   return {
